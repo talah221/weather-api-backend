@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { GlobalModule } from './global.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(GlobalModule);
   app.enableCors({origin:["http://localhost:3000","https://weather-app-tal.herokuapp.com/"]})
   await app.listen(process.env.PORT || '3030');
 }
